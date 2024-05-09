@@ -1,0 +1,814 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    --color1: #FFF;
+    --color2: #181818;
+    --theme: rgba(29, 134, 85, 0.8);
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* z-index: -100; */
+    color: white;
+}
+
+/*---------navigation bar code--------------*/
+
+header {
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    background-color: transparent;
+    height: 34rem;
+    z-index: 1099990;
+    background: linear-gradient(to bottom, rgba(20, 94, 57, 0.8) 0%, 45%, #272f27 100%), url("faded-bg.jpg") no-repeat center;
+}
+
+.logo a {
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    padding-bottom: 0px;
+    z-index: 100;
+}
+
+.nav-bar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    position: relative;
+    background-color: transparent;
+    padding: 12px 20px;
+    position: sticky;
+    top: 0;
+}
+
+#signbtn {
+    background-color: white;
+    padding: 5px;
+    color: black;
+    border-radius: 13px;
+    width: 110px;
+    transition: all .4s;
+    border: solid 1px transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+}
+
+#signbtn i {
+    color: blue;
+    font-size: 22px;
+}
+
+#signbtn:hover {
+    background-color: transparent;
+    border: solid 1px white;
+    color: white;
+}
+
+#signbtn:hover::after {
+    content: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: none;
+    background-color: transparent;
+    transition: none;
+}
+
+.menu {
+    display: flex;
+}
+
+.menu li {
+    padding-left: 30px;
+}
+
+.menu li a {
+    display: inline-block;
+    padding: 5px;
+    text-decoration: none;
+    color: var(--color1);
+    text-align: center;
+    transition: 0.15s ease-in-out;
+    position: relative;
+    text-transform: uppercase;
+    font-weight: 560;
+}
+
+.menu li a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--color1);
+    transition: 0.15s ease-in-out;
+}
+
+.menu li a:hover:after {
+    width: 100%;
+}
+
+.open-menu,
+.close-menu {
+    position: absolute;
+    color: var(--color1);
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: none;
+}
+
+.open-menu {
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+.close-menu {
+    top: 20px;
+    right: 20px;
+}
+
+#check {
+    display: none;
+}
+
+@media(max-width: 610px) {
+    .menu {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 100;
+        background-color: var(--color2);
+        transition: all 0.2s ease-in-out;
+    }
+
+    .menu li {
+        margin-top: 40px;
+    }
+
+    .menu li a {
+        padding: 10px;
+    }
+
+    .open-menu,
+    .close-menu {
+        display: block;
+    }
+
+    #check:checked~.menu {
+        right: 0;
+    }
+}
+
+.title {
+    padding: 0 25%;
+    margin-top: 140px;
+    /* text-align: center; */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.title a {
+    font-size: 70px;
+    color: white;
+    font-weight: 800;
+}
+
+.title #sub-title {
+    font-size: 36px;
+    width: 900px;
+    text-align: center;
+
+}
+
+.title #sub-title span {
+    color: greenyellow;
+    text-decoration: underline;
+}
+
+/*------------content area code-------------*/
+
+.content-area {
+    background-color: #27272f;
+    height: 2600px;
+    border-top: solid 2px #303040;
+}
+
+.content-area .boxes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.content-area .boxes .box {
+    background-color: #292b36;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    color: white;
+    font-size: 26px;
+    display: flex;
+    justify-content: center;
+    gap: 2px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all .3s;
+}
+
+.content-area .box i {
+    background-color: white;
+    padding: 10px;
+    border-radius: 50px;
+    width: fit-content;
+    height: fit-content;
+    color: var(--theme);
+}
+
+.content-area #box1:hover {
+    margin-top: 6px;
+    background-color: #363742;
+}
+
+.content-area #box2:hover {
+    margin-top: 6px;
+    background-color: #363742;
+}
+
+.content-area #box3:hover {
+    margin-top: 6px;
+    background-color: #363742;
+}
+
+.content-area .boxes .box h4 {
+    text-align: center;
+    font-weight: 400;
+    width: 260px;
+}
+
+.minecraft {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.minecraft #m-title {
+    font-size: 38px;
+    font-weight: 900;
+    text-decoration: underline;
+}
+
+.minecraft #m-subtitle {
+    width: 800px;
+    color: #FFFFFFBF;
+}
+
+.minecraft #steve {
+    width: 200px;
+    margin-top: 20px;
+}
+
+.info-1 {
+    position: absolute;
+    width: 350px;
+    left: 220px;
+    color: #FFFFFFBF;
+    font-weight: 300;
+}
+
+.info-1 h2 {
+    color: var(--theme);
+    margin-bottom: 5px;
+    text-decoration: underline;
+}
+
+.info-1 h2 i {
+    font-size: 33px;
+}
+
+.info-1 p {
+    text-align: right;
+    margin-right: 100px;
+}
+
+.info-2 {
+    position: absolute;
+    width: 350px;
+    left: 220px;
+    top: 1150px;
+    color: #FFFFFFBF;
+    font-weight: 300;
+}
+
+.info-2 h2 {
+    color: var(--theme);
+    margin-bottom: 5px;
+    text-decoration: underline;
+}
+
+.info-2 h2 i {
+    font-size: 33px;
+}
+
+.info-2 p {
+    text-align: right;
+    margin-right: 100px;
+}
+
+.info-3 {
+    position: absolute;
+    width: 350px;
+    right: 200px;
+    top: 1150px;
+    color: #FFFFFFBF;
+    font-weight: 300;
+}
+
+.info-3 h2 {
+    color: var(--theme);
+    margin-bottom: 5px;
+    text-decoration: underline;
+}
+
+.info-3 h2 i {
+    font-size: 33px;
+}
+
+.info-3 p {
+    text-align: left;
+    margin-left: 45px;
+}
+
+.info-4 {
+    position: absolute;
+    width: 350px;
+    right: 190px;
+    top: 920px;
+    color: #FFFFFFBF;
+    font-weight: 300;
+}
+
+.info-4 h2 {
+    color: var(--theme);
+    margin-bottom: 5px;
+    text-decoration: underline;
+}
+
+.info-4 h2 i {
+    font-size: 33px;
+}
+
+.info-4 p {
+    text-align: left;
+    margin-left: 34px;
+}
+
+.discord {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* background-color: #292b36;
+    z-index: 1000;
+    padding: 50px;
+    border-radius: 20px;
+    height: 500px;*/
+} 
+
+.d-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #2f3036;
+    z-index: 1000;
+    padding: 50px;
+    border-radius: 10px;
+    height: 500px;
+    width: 1200px;
+}
+
+.discord #discord {
+    position: absolute;
+    top: 1400px;
+    left: 200px;
+    width: 350px;
+}
+
+.discord #d-title {
+    font-size: 52px;
+    position: absolute;
+    top: 1430px;
+    right: 320px;
+    text-decoration: underline;
+}
+
+.discord #d-subtitle {
+    width: 600px;
+    position: absolute;
+    top: 1500px;
+    right: 160px;
+    color: #FFFFFFBF;
+    text-align: left;
+}
+
+.discord #d-subtitle i {
+    color: gold;
+    font-size: 28px;
+    transition: all .4s;
+    cursor: pointer;
+}
+
+.discord #d-subtitle i:hover {
+    font-size: 32px;
+}
+
+.discord #comment {
+    position: absolute;
+    top: 1740px;
+    right: 180px;
+    text-decoration: underline;
+}
+
+.discord #comment span {
+    color: yellow;
+}
+
+.w-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #15151C;
+    z-index: 1000;
+    padding: 50px;
+    border-radius: 10px;
+    height: 500px;
+    width: 100%;
+    margin-top: 100px;
+    border: solid 2px #303040;
+}
+
+.website {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #15151C;
+    width: 100%;
+}
+
+.website #website {
+    width: 440px;
+    position: absolute;
+    top: 1980px;
+    right: 100px;
+}
+
+.website #w-title {
+    font-size: 38px;
+    text-decoration: underline;
+    position: absolute;
+    top: 2140px;
+    left: 100px;
+}
+
+.website #w-subtitle {
+    color: #FFFFFFBF;
+    text-align: right;
+    position: absolute;
+    top: 2200px;
+    left: 50px;
+    width: 650px;
+}
+
+.website #projects {
+    position: absolute;
+    top: 120px;
+    left: 450px;
+    width: 200px;
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 17px;
+    border-radius: 10px;
+    background-color: var(--theme);
+    cursor: pointer;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .4s;
+}
+
+.website #projects i {
+    font-size: 24px;
+}
+
+.website #projects:hover {
+    gap: 5px;
+}
+
+.whychoose {
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    background-color: #1d1d27;
+    margin-top: 100px;
+    padding: 50px;
+    height: 540px;
+    width: 90%;
+}
+
+.whychoose #why-title {
+    font-size: 34px;
+    margin-bottom: 40px;
+}
+
+.whychoose .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 60px;
+}
+
+.whychoose .container .items {
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.whychoose .container .items p {
+    color: #FFFFFFBF;
+    width: 300px;
+}
+
+.whychoose .container .items h4 i {
+    color: var(--theme);
+    font-size: 24px;
+    background-color: #303040;
+    padding: 5px;
+    border-radius: 50px;
+    margin-right: 10px;
+}
+
+.whychoose .container2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    gap: 60px;
+}
+
+.whychoose .container2 .items2 {
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.whychoose .container2 .items2 p {
+    color: #FFFFFFBF;
+    width: 300px;
+}
+
+.whychoose .container2 .items2 h4 i {
+    color: var(--theme);
+    font-size: 24px;
+    background-color: #303040;
+    padding: 5px;
+    border-radius: 50px;
+    margin-right: 10px;
+}
+
+.w-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+/*------------footer code-----------*/
+
+footer {
+    background-color: #1D1D27;
+    border-top: solid 2px #303040;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    height: 200px;
+    padding-top: 60px;
+}
+
+footer .up {
+    display: flex;
+    flex-direction: column;
+}
+
+footer .up i {
+    font-size: 42px;
+    margin-top: 10px;
+    transition: all .5s;
+}
+
+footer .up i:hover {
+    margin-top: 0;
+}
+
+footer .up .footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+footer p {
+    color: #FFFFFFBF;
+    width: 300px;
+    text-align: center;
+}
+
+.copyright {
+    background-color: #000000;
+    padding: 20px;
+}
+
+.copyright p {
+    color: #FFFFFFBF;
+}
+
+
+/*---------------Responsive Code-----------------*/
+
+
+
+@media only screen and (max-width: 868px) {
+    #discord {
+        display: none;
+    }
+
+    #website {
+        display: none;
+    }
+
+    .minecraft #m-subtitle {
+        max-width: 500px;
+    }
+
+    .website {
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .w-container {
+        height: 500px;
+        margin-top: 60px;
+    }
+
+    #w-subtitle {
+        width: 100%;
+        top: 0;
+    }
+
+    #w-title {
+        background-color: transparent;
+    }
+
+    .title {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .title a {
+        font-size: 40px;
+    }
+
+    footer {
+        margin-top: 200px;
+    }
+
+    .title #sub-title {
+        font-size: 18px;
+        width: auto;
+        text-align: center;
+    }
+
+    .content-area {
+        padding: 20px;
+        height: 4170px;
+    }
+
+    .content-area .boxes {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .w-center {
+        margin-bottom: 0;
+    }
+
+    .content-area .box {
+        width: 100%;
+    }
+
+    .minecraft .info-1,
+    .minecraft .info-2,
+    .minecraft .info-3,
+    .minecraft .info-4,
+    .discord .d-container
+    /*.whychoose .whychoose*/ {
+        position: static;
+        width: auto;
+        left: auto;
+        top: auto;
+        right: auto;
+    }
+
+    .whychoose {
+        height: 1070px;
+    }
+
+    .discord #discord,
+    .discord #d-title,
+    .discord #d-subtitle,
+    .discord #comment {
+        position: static;
+        top: auto;
+        left: auto;
+        right: auto;
+        width: auto;
+    }
+
+    .website #w-title,
+    .website #w-subtitle {
+        position: static;
+        top: auto;
+        left: auto;
+        right: auto;
+        width: 300px;
+        text-align: center;
+    }
+
+    .website #w-title {
+        font-size: 30px;
+        width: 400px;
+        margin-top: 0px;
+    }
+
+    .website #projects {
+        position: static;
+        margin: 20px 0;
+    }
+
+    .whychoose .container,
+    .whychoose .container2 {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .whychoose .container .items,
+    .whychoose .container2 .items2 {
+        text-align: center;
+    }
+
+    footer {
+        margin-top: 0;
+        width: 100%;
+    }
+}
