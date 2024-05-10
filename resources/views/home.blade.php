@@ -142,7 +142,7 @@
         </div>
     </footer>
     <div class="copyright">
-        <p>Copyright © 2024 BonsaiDesigns LLC</p>
+        <p>Copyright © 2023 BonsaiDesigns LLC</p>
     </div>
 
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
